@@ -1,0 +1,1459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.9.2 on darwin)" generated="20210324 22:56:50.453" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests1" source="/Users/maria/Documents/Repository/robot-python-bitglass-challenge/tests1.robot">
+<test id="s1-t1" name="Valid All the Fields">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:56:50.714" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:56:50.713" endtime="20210324 22:56:53.831"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:50.713" endtime="20210324 22:56:53.831"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>${VALID_NEW_PASSWORD}</arg>
+<arg>${VALID_CONFIRM_PASSWORD}</arg>
+<arg>${PASS_CHANGED_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:56:53.833" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:56:53.833" endtime="20210324 22:56:53.973"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:53.832" endtime="20210324 22:56:53.974"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:56:53.975" level="INFO">Typing text 'Earth16' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:56:53.975" endtime="20210324 22:56:54.041"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:53.974" endtime="20210324 22:56:54.041"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:56:54.042" level="INFO">Typing text 'Earth16' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:56:54.042" endtime="20210324 22:56:54.103"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:54.041" endtime="20210324 22:56:54.103"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:56:54.104" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:56:54.104" endtime="20210324 22:56:54.308"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:54.104" endtime="20210324 22:56:54.308"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:56:54.321" level="INFO">Current page contains element 'xpath=//div[@class='ok' and contains(text(), 'changed')]'.</msg>
+<status status="PASS" starttime="20210324 22:56:54.309" endtime="20210324 22:56:54.321"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:54.308" endtime="20210324 22:56:54.321"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:53.831" endtime="20210324 22:56:54.321"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:50.712" endtime="20210324 22:56:54.322"/>
+</test>
+<test id="s1-t2" name="Invalid Old, Valid New password">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:56:54.324" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:56:54.324" endtime="20210324 22:56:56.943"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:54.323" endtime="20210324 22:56:56.944"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>Earth14</arg>
+<arg>${VALID_NEW_PASSWORD}</arg>
+<arg>${VALID_CONFIRM_PASSWORD}</arg>
+<arg>${FAIL_INVALID_OLD_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:56:56.946" level="INFO">Typing text 'Earth14' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:56:56.946" endtime="20210324 22:56:57.118"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:56.945" endtime="20210324 22:56:57.118"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:56:57.119" level="INFO">Typing text 'Earth16' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:56:57.119" endtime="20210324 22:56:57.183"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:57.119" endtime="20210324 22:56:57.183"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:56:57.184" level="INFO">Typing text 'Earth16' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:56:57.184" endtime="20210324 22:56:57.249"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:57.183" endtime="20210324 22:56:57.249"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:56:57.250" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:56:57.249" endtime="20210324 22:56:57.457"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:57.249" endtime="20210324 22:56:57.458"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:56:57.469" level="INFO">Current page contains element 'xpath=//div[@class='err' and contains(text(), 'incorrect current password')]'.</msg>
+<status status="PASS" starttime="20210324 22:56:57.459" endtime="20210324 22:56:57.469"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:57.458" endtime="20210324 22:56:57.470"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:56.944" endtime="20210324 22:56:57.470"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:54.323" endtime="20210324 22:56:57.470"/>
+</test>
+<test id="s1-t3" name="New and Confirm Fields don't match">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:56:57.473" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:56:57.472" endtime="20210324 22:57:00.591"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:57.472" endtime="20210324 22:57:00.592"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>${VALID_NEW_PASSWORD}</arg>
+<arg>Earth17</arg>
+<arg>${FAIL_MATCH_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:00.596" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:00.595" endtime="20210324 22:57:00.786"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:00.594" endtime="20210324 22:57:00.787"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:00.789" level="INFO">Typing text 'Earth16' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:00.788" endtime="20210324 22:57:00.896"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:00.787" endtime="20210324 22:57:00.896"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:00.898" level="INFO">Typing text 'Earth17' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:00.897" endtime="20210324 22:57:01.004"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:00.897" endtime="20210324 22:57:01.004"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:01.005" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:01.005" endtime="20210324 22:57:01.209"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:01.004" endtime="20210324 22:57:01.209"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:57:01.224" level="INFO">Current page contains element 'xpath=//div[@class='err' and contains(text(), 'does not match')]'.</msg>
+<status status="PASS" starttime="20210324 22:57:01.210" endtime="20210324 22:57:01.224"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:01.209" endtime="20210324 22:57:01.225"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:00.593" endtime="20210324 22:57:01.225"/>
+</kw>
+<status status="PASS" starttime="20210324 22:56:57.471" endtime="20210324 22:57:01.226"/>
+</test>
+<test id="s1-t4" name="New and Old passwords cannot be the same">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:01.230" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:01.229" endtime="20210324 22:57:04.151"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:01.228" endtime="20210324 22:57:04.151"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>${FAIL_SAME_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:04.153" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:04.153" endtime="20210324 22:57:04.296"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:04.152" endtime="20210324 22:57:04.296"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:04.297" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:04.297" endtime="20210324 22:57:04.365"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:04.296" endtime="20210324 22:57:04.365"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:04.366" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:04.365" endtime="20210324 22:57:04.427"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:04.365" endtime="20210324 22:57:04.428"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:04.428" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:04.428" endtime="20210324 22:57:04.629"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:04.428" endtime="20210324 22:57:04.630"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:57:04.646" level="INFO">Current page contains element 'xpath=//div[@class='err' and contains(text(), 'cannot be the same')]'.</msg>
+<status status="PASS" starttime="20210324 22:57:04.631" endtime="20210324 22:57:04.646"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:04.630" endtime="20210324 22:57:04.646"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:04.151" endtime="20210324 22:57:04.647"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:01.227" endtime="20210324 22:57:04.647"/>
+</test>
+<test id="s1-t5" name="Blank All the Fields">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:04.650" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:04.649" endtime="20210324 22:57:08.083"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:04.649" endtime="20210324 22:57:08.083"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${FAIL_BLANK_CURRECT_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:08.088" level="INFO">Typing text '' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:08.087" endtime="20210324 22:57:08.213"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:08.086" endtime="20210324 22:57:08.213"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:08.214" level="INFO">Typing text '' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:08.214" endtime="20210324 22:57:08.278"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:08.213" endtime="20210324 22:57:08.278"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:08.279" level="INFO">Typing text '' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:08.279" endtime="20210324 22:57:08.340"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:08.278" endtime="20210324 22:57:08.340"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:08.341" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:08.340" endtime="20210324 22:57:08.543"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:08.340" endtime="20210324 22:57:08.544"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:57:08.558" level="INFO">Current page contains element 'xpath=//div[@class='err' and contains(text(), 'Enter current password')]'.</msg>
+<status status="PASS" starttime="20210324 22:57:08.544" endtime="20210324 22:57:08.559"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:08.544" endtime="20210324 22:57:08.559"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:08.083" endtime="20210324 22:57:08.559"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:04.648" endtime="20210324 22:57:08.559"/>
+</test>
+<test id="s1-t6" name="Blank Old Password Field">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:08.561" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:08.561" endtime="20210324 22:57:11.238"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:08.561" endtime="20210324 22:57:11.238"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${EMPTY}</arg>
+<arg>${VALID_NEW_PASSWORD}</arg>
+<arg>${VALID_CONFIRM_PASSWORD}</arg>
+<arg>${FAIL_BLANK_CURRECT_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:11.242" level="INFO">Typing text '' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:11.242" endtime="20210324 22:57:11.377"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:11.241" endtime="20210324 22:57:11.377"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:11.378" level="INFO">Typing text 'Earth16' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:11.378" endtime="20210324 22:57:11.483"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:11.377" endtime="20210324 22:57:11.484"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:11.485" level="INFO">Typing text 'Earth16' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:11.484" endtime="20210324 22:57:11.554"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:11.484" endtime="20210324 22:57:11.554"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:11.555" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:11.554" endtime="20210324 22:57:11.791"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:11.554" endtime="20210324 22:57:11.791"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:57:11.810" level="INFO">Current page contains element 'xpath=//div[@class='err' and contains(text(), 'Enter current password')]'.</msg>
+<status status="PASS" starttime="20210324 22:57:11.793" endtime="20210324 22:57:11.810"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:11.792" endtime="20210324 22:57:11.810"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:11.239" endtime="20210324 22:57:11.810"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:08.560" endtime="20210324 22:57:11.810"/>
+</test>
+<test id="s1-t7" name="Blank New Password Field">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:11.813" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:11.813" endtime="20210324 22:57:15.428"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:11.812" endtime="20210324 22:57:15.429"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>${EMPTY}</arg>
+<arg>${VALID_CONFIRM_PASSWORD}</arg>
+<arg>${FAIL_BLANK_NEW_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:15.436" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:15.435" endtime="20210324 22:57:15.727"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:15.433" endtime="20210324 22:57:15.728"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:15.734" level="INFO">Typing text '' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:15.733" endtime="20210324 22:57:15.876"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:15.733" endtime="20210324 22:57:15.876"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:15.877" level="INFO">Typing text 'Earth16' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:15.877" endtime="20210324 22:57:16.039"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:15.876" endtime="20210324 22:57:16.040"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:16.041" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:16.041" endtime="20210324 22:57:16.270"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:16.040" endtime="20210324 22:57:16.270"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:57:16.288" level="INFO">Current page contains element 'xpath=//div[@class='err' and contains(text(), 'Enter new password')]'.</msg>
+<status status="PASS" starttime="20210324 22:57:16.271" endtime="20210324 22:57:16.288"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:16.271" endtime="20210324 22:57:16.288"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:15.429" endtime="20210324 22:57:16.289"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:11.811" endtime="20210324 22:57:16.289"/>
+</test>
+<test id="s1-t8" name="Blank Confirm Password Field">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:16.292" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:16.291" endtime="20210324 22:57:19.867"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:16.291" endtime="20210324 22:57:19.868"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>${VALID_NEW_PASSWORD}</arg>
+<arg>${EMPTY}</arg>
+<arg>${FAIL_BLANK_CONFIRM_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:19.875" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:19.873" endtime="20210324 22:57:20.158"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:19.872" endtime="20210324 22:57:20.158"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:20.160" level="INFO">Typing text 'Earth16' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:20.159" endtime="20210324 22:57:20.271"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:20.159" endtime="20210324 22:57:20.271"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:20.273" level="INFO">Typing text '' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:20.272" endtime="20210324 22:57:20.375"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:20.272" endtime="20210324 22:57:20.375"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:20.376" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:20.376" endtime="20210324 22:57:20.637"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:20.375" endtime="20210324 22:57:20.638"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:57:20.656" level="INFO">Current page contains element 'xpath=//div[@class='err' and contains(text(), 'Enter confirm password')]'.</msg>
+<status status="PASS" starttime="20210324 22:57:20.639" endtime="20210324 22:57:20.656"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:20.638" endtime="20210324 22:57:20.657"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:19.868" endtime="20210324 22:57:20.657"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:16.290" endtime="20210324 22:57:20.657"/>
+</test>
+<test id="s1-t9" name="Blank New and Confirm Password Fields">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:20.661" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:20.661" endtime="20210324 22:57:24.148"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:20.660" endtime="20210324 22:57:24.149"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${FAIL_BLANK_NEW_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:24.155" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:24.154" endtime="20210324 22:57:24.361"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:24.152" endtime="20210324 22:57:24.361"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:24.363" level="INFO">Typing text '' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:24.362" endtime="20210324 22:57:24.466"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:24.362" endtime="20210324 22:57:24.466"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:24.468" level="INFO">Typing text '' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:24.468" endtime="20210324 22:57:24.565"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:24.467" endtime="20210324 22:57:24.565"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:24.566" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:24.566" endtime="20210324 22:57:24.827"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:24.565" endtime="20210324 22:57:24.828"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:57:24.849" level="INFO">Current page contains element 'xpath=//div[@class='err' and contains(text(), 'Enter new password')]'.</msg>
+<status status="PASS" starttime="20210324 22:57:24.830" endtime="20210324 22:57:24.849"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:24.828" endtime="20210324 22:57:24.849"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:24.149" endtime="20210324 22:57:24.850"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:20.658" endtime="20210324 22:57:24.851"/>
+</test>
+<test id="s1-t10" name="Password has least One Number and One Capital Letter">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:24.854" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:24.854" endtime="20210324 22:57:28.396"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:24.853" endtime="20210324 22:57:28.397"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>earth</arg>
+<arg>earth</arg>
+<arg>${FAIL_NUMBER_CAPITAL_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:28.401" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:28.400" endtime="20210324 22:57:28.695"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:28.399" endtime="20210324 22:57:28.696"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:28.699" level="INFO">Typing text 'earth' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:28.698" endtime="20210324 22:57:28.834"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:28.696" endtime="20210324 22:57:28.834"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:28.836" level="INFO">Typing text 'earth' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:28.835" endtime="20210324 22:57:28.940"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:28.834" endtime="20210324 22:57:28.941"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:28.943" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:28.943" endtime="20210324 22:57:29.232"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:28.942" endtime="20210324 22:57:29.232"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210324 22:57:30.152" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210324 22:57:29.261" endtime="20210324 22:57:30.153"/>
+</kw>
+<msg timestamp="20210324 22:57:30.165" level="FAIL">Page should have contained element 'xpath=//div[@class='err' and contains(text(), 'at least one number and capital letter')]' but did not.</msg>
+<status status="FAIL" starttime="20210324 22:57:29.234" endtime="20210324 22:57:30.166"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:57:29.233" endtime="20210324 22:57:30.166"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:57:28.397" endtime="20210324 22:57:30.167"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:57:24.852" endtime="20210324 22:57:30.167">Page should have contained element 'xpath=//div[@class='err' and contains(text(), 'at least one number and capital letter')]' but did not.</status>
+</test>
+<test id="s1-t11" name="Password has least One Capital Letter">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:30.171" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:30.170" endtime="20210324 22:57:33.713"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:30.169" endtime="20210324 22:57:33.714"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>earth17</arg>
+<arg>earth17</arg>
+<arg>${FAIL_CAPITAL_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:33.718" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:33.717" endtime="20210324 22:57:34.084"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:33.716" endtime="20210324 22:57:34.084"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:34.087" level="INFO">Typing text 'earth17' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:34.086" endtime="20210324 22:57:34.221"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:34.084" endtime="20210324 22:57:34.226"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:34.229" level="INFO">Typing text 'earth17' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:34.228" endtime="20210324 22:57:34.342"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:34.227" endtime="20210324 22:57:34.342"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:34.345" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:34.344" endtime="20210324 22:57:34.607"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:34.343" endtime="20210324 22:57:34.607"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:57:34.630" level="INFO">Current page contains element 'xpath=//div[@class='err' and contains(text(), 'at least one capital letter')]'.</msg>
+<status status="PASS" starttime="20210324 22:57:34.608" endtime="20210324 22:57:34.631"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:34.608" endtime="20210324 22:57:34.631"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:33.715" endtime="20210324 22:57:34.632"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:30.168" endtime="20210324 22:57:34.633"/>
+</test>
+<test id="s1-t12" name="Password has least One Number">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:34.636" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:34.636" endtime="20210324 22:57:37.724"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:34.635" endtime="20210324 22:57:37.725"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>earth</arg>
+<arg>earth</arg>
+<arg>${FAIL_NUMBER_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:37.728" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:37.727" endtime="20210324 22:57:37.874"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:37.726" endtime="20210324 22:57:37.874"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:37.875" level="INFO">Typing text 'earth' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:37.875" endtime="20210324 22:57:37.938"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:37.874" endtime="20210324 22:57:37.938"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:37.939" level="INFO">Typing text 'earth' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:37.939" endtime="20210324 22:57:37.998"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:37.939" endtime="20210324 22:57:37.998"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:37.999" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:37.999" endtime="20210324 22:57:38.168"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:37.998" endtime="20210324 22:57:38.168"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:57:38.180" level="INFO">Current page contains element 'xpath=//div[@class='err' and contains(text(), 'at least one number')]'.</msg>
+<status status="PASS" starttime="20210324 22:57:38.169" endtime="20210324 22:57:38.181"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:38.169" endtime="20210324 22:57:38.181"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:37.725" endtime="20210324 22:57:38.181"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:34.634" endtime="20210324 22:57:38.181"/>
+</test>
+<test id="s1-t13" name="Only Spaces in Blank New and Confinm Fields">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:38.184" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:38.184" endtime="20210324 22:57:40.982"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:38.183" endtime="20210324 22:57:40.982"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>${SPACE}</arg>
+<arg>${SPACE}</arg>
+<arg>${FAIL_BLANK_NEW_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:40.985" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:40.984" endtime="20210324 22:57:41.134"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:40.984" endtime="20210324 22:57:41.134"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:41.135" level="INFO">Typing text ' ' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:41.135" endtime="20210324 22:57:41.218"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:41.134" endtime="20210324 22:57:41.218"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:41.219" level="INFO">Typing text ' ' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:41.219" endtime="20210324 22:57:41.283"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:41.218" endtime="20210324 22:57:41.285"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:41.286" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:41.286" endtime="20210324 22:57:41.483"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:41.285" endtime="20210324 22:57:41.483"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210324 22:57:42.049" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210324 22:57:41.501" endtime="20210324 22:57:42.050"/>
+</kw>
+<msg timestamp="20210324 22:57:42.050" level="FAIL">Page should have contained element 'xpath=//div[@class='err' and contains(text(), 'Enter new password')]' but did not.</msg>
+<status status="FAIL" starttime="20210324 22:57:41.484" endtime="20210324 22:57:42.050"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:57:41.483" endtime="20210324 22:57:42.051"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:57:40.983" endtime="20210324 22:57:42.051"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:57:38.182" endtime="20210324 22:57:42.051">Page should have contained element 'xpath=//div[@class='err' and contains(text(), 'Enter new password')]' but did not.</status>
+</test>
+<test id="s1-t14" name="Password contains Spaces">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:42.054" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:42.054" endtime="20210324 22:57:45.777"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:42.053" endtime="20210324 22:57:45.778"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>Word1${SPACE}word2</arg>
+<arg>Word1${SPACE}word2</arg>
+<arg>${FAIL_SPACES_BETWEEN_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:45.784" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:45.783" endtime="20210324 22:57:46.065"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:45.782" endtime="20210324 22:57:46.066"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:46.067" level="INFO">Typing text 'Word1 word2' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:46.067" endtime="20210324 22:57:46.181"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:46.066" endtime="20210324 22:57:46.182"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:46.183" level="INFO">Typing text 'Word1 word2' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:46.183" endtime="20210324 22:57:46.291"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:46.182" endtime="20210324 22:57:46.291"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:46.292" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:46.292" endtime="20210324 22:57:46.561"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:46.291" endtime="20210324 22:57:46.562"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210324 22:57:47.281" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210324 22:57:46.589" endtime="20210324 22:57:47.282"/>
+</kw>
+<msg timestamp="20210324 22:57:47.282" level="FAIL">Page should have contained element 'xpath=//div[@class='err' and contains(text(), 'cannot contain spaces')]' but did not.</msg>
+<status status="FAIL" starttime="20210324 22:57:46.563" endtime="20210324 22:57:47.282"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:57:46.562" endtime="20210324 22:57:47.283"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:57:45.779" endtime="20210324 22:57:47.283"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:57:42.052" endtime="20210324 22:57:47.283">Page should have contained element 'xpath=//div[@class='err' and contains(text(), 'cannot contain spaces')]' but did not.</status>
+</test>
+<test id="s1-t15" name="MAX Limit for Password - 8 characters">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:47.286" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:47.286" endtime="20210324 22:57:51.200"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:47.285" endtime="20210324 22:57:51.201"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>Earth16!</arg>
+<arg>Earth16!</arg>
+<arg>${PASS_CHANGED_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:51.204" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:51.203" endtime="20210324 22:57:51.482"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:51.203" endtime="20210324 22:57:51.482"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:51.484" level="INFO">Typing text 'Earth16!' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:51.484" endtime="20210324 22:57:51.603"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:51.482" endtime="20210324 22:57:51.603"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:51.605" level="INFO">Typing text 'Earth16!' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:51.604" endtime="20210324 22:57:51.710"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:51.603" endtime="20210324 22:57:51.710"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:51.712" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:51.711" endtime="20210324 22:57:51.973"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:51.710" endtime="20210324 22:57:51.973"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:57:51.995" level="INFO">Current page contains element 'xpath=//div[@class='ok' and contains(text(), 'changed')]'.</msg>
+<status status="PASS" starttime="20210324 22:57:51.975" endtime="20210324 22:57:51.995"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:51.974" endtime="20210324 22:57:51.995"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:51.201" endtime="20210324 22:57:51.996"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:47.284" endtime="20210324 22:57:51.996"/>
+</test>
+<test id="s1-t16" name="MIN Limit for Password - 4 characters">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:52.000" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:51.999" endtime="20210324 22:57:55.125"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:51.998" endtime="20210324 22:57:55.126"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>Pas1</arg>
+<arg>Pas1</arg>
+<arg>${PASS_CHANGED_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:55.130" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:55.129" endtime="20210324 22:57:55.292"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:55.128" endtime="20210324 22:57:55.293"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:55.297" level="INFO">Typing text 'Pas1' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:55.296" endtime="20210324 22:57:55.385"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:55.294" endtime="20210324 22:57:55.386"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:55.388" level="INFO">Typing text 'Pas1' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:55.387" endtime="20210324 22:57:55.503"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:55.386" endtime="20210324 22:57:55.503"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:55.504" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:55.504" endtime="20210324 22:57:55.756"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:55.503" endtime="20210324 22:57:55.756"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:57:55.770" level="INFO">Current page contains element 'xpath=//div[@class='ok' and contains(text(), 'changed')]'.</msg>
+<status status="PASS" starttime="20210324 22:57:55.757" endtime="20210324 22:57:55.770"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:55.756" endtime="20210324 22:57:55.770"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:55.127" endtime="20210324 22:57:55.770"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:51.997" endtime="20210324 22:57:55.770"/>
+</test>
+<test id="s1-t17" name="MAX Limit for Password - 9 characters">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:57:55.773" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:57:55.772" endtime="20210324 22:57:59.452"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:55.772" endtime="20210324 22:57:59.453"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>Earth167!</arg>
+<arg>Earth167!</arg>
+<arg>${FAIL_LENGTH_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:59.458" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:59.457" endtime="20210324 22:57:59.713"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:59.456" endtime="20210324 22:57:59.713"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:59.715" level="INFO">Typing text 'Earth167!' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:59.714" endtime="20210324 22:57:59.832"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:59.713" endtime="20210324 22:57:59.833"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:59.834" level="INFO">Typing text 'Earth167!' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:57:59.834" endtime="20210324 22:57:59.948"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:59.833" endtime="20210324 22:57:59.948"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:57:59.950" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:57:59.949" endtime="20210324 22:58:00.217"/>
+</kw>
+<status status="PASS" starttime="20210324 22:57:59.948" endtime="20210324 22:58:00.218"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210324 22:58:01.054" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210324 22:58:00.250" endtime="20210324 22:58:01.054"/>
+</kw>
+<msg timestamp="20210324 22:58:01.056" level="FAIL">Page should have contained element 'xpath=//div[@class='err' and contains(text(), '4-8 characters')]' but did not.</msg>
+<status status="FAIL" starttime="20210324 22:58:00.219" endtime="20210324 22:58:01.056"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:58:00.218" endtime="20210324 22:58:01.056"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:57:59.454" endtime="20210324 22:58:01.057"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:57:55.771" endtime="20210324 22:58:01.058">Page should have contained element 'xpath=//div[@class='err' and contains(text(), '4-8 characters')]' but did not.</status>
+</test>
+<test id="s1-t18" name="MIN Limit for Password - 3 characters">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:58:01.063" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:58:01.062" endtime="20210324 22:58:05.317"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:01.061" endtime="20210324 22:58:05.318"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>Pa1</arg>
+<arg>Pa1</arg>
+<arg>${FAIL_LENGTH_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:58:05.322" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:58:05.321" endtime="20210324 22:58:05.612"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:05.321" endtime="20210324 22:58:05.613"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:58:05.615" level="INFO">Typing text 'Pa1' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:58:05.614" endtime="20210324 22:58:05.719"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:05.613" endtime="20210324 22:58:05.719"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:58:05.721" level="INFO">Typing text 'Pa1' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:58:05.720" endtime="20210324 22:58:05.820"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:05.720" endtime="20210324 22:58:05.820"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:58:05.821" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:58:05.821" endtime="20210324 22:58:06.079"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:05.820" endtime="20210324 22:58:06.080"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210324 22:58:06.100" level="INFO">Current page contains element 'xpath=//div[@class='err' and contains(text(), '4-8 characters')]'.</msg>
+<status status="PASS" starttime="20210324 22:58:06.082" endtime="20210324 22:58:06.100"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:06.080" endtime="20210324 22:58:06.100"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:05.319" endtime="20210324 22:58:06.100"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:01.059" endtime="20210324 22:58:06.101"/>
+</test>
+<test id="s1-t19" name="Password XSS Protected">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:58:06.105" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:58:06.105" endtime="20210324 22:58:10.592"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:06.104" endtime="20210324 22:58:10.593"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>${XSS}</arg>
+<arg>${XSS}</arg>
+<arg>${FAIL_ACCESS_DENIED_MESSAGE}</arg>
+<kw name="Input Old Password">
+<arg>${OLD_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='cur_password']</arg>
+<arg>${old_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:58:10.597" level="INFO">Typing text 'Earth15' into text field 'xpath=//input[@name='cur_password']'.</msg>
+<status status="PASS" starttime="20210324 22:58:10.596" endtime="20210324 22:58:10.877"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:10.595" endtime="20210324 22:58:10.877"/>
+</kw>
+<kw name="Input New Password">
+<arg>${NEW_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='new_password']</arg>
+<arg>${new_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:58:10.880" level="INFO">Typing text '1'"()%26%25&lt;acx&gt;&lt;ScRiPt%20&gt;ohKJ(9820)&lt;/ScRiPt&gt;' into text field 'xpath=//input[@name='new_password']'.</msg>
+<status status="PASS" starttime="20210324 22:58:10.879" endtime="20210324 22:58:11.112"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:10.877" endtime="20210324 22:58:11.112"/>
+</kw>
+<kw name="Input Confirm Password">
+<arg>${CONFIRM_PASSWORD}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//input[@name='confirm_password']</arg>
+<arg>${confirm_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210324 22:58:11.114" level="INFO">Typing text '1'"()%26%25&lt;acx&gt;&lt;ScRiPt%20&gt;ohKJ(9820)&lt;/ScRiPt&gt;' into text field 'xpath=//input[@name='confirm_password']'.</msg>
+<status status="PASS" starttime="20210324 22:58:11.114" endtime="20210324 22:58:11.291"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:11.112" endtime="20210324 22:58:11.292"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath=//input[@name='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210324 22:58:11.293" level="INFO">Clicking button 'xpath=//input[@name='submit']'.</msg>
+<status status="PASS" starttime="20210324 22:58:11.293" endtime="20210324 22:58:11.585"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:11.292" endtime="20210324 22:58:11.586"/>
+</kw>
+<kw name="Message Displayed">
+<arg>${MESSAGE_RESULT}</arg>
+<doc>Display result message after Sumbit form</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210324 22:58:12.372" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210324 22:58:11.612" endtime="20210324 22:58:12.373"/>
+</kw>
+<msg timestamp="20210324 22:58:12.373" level="FAIL">Page should have contained element 'xpath=//div[@class='err' and contains(text(), 'Access Denied')]' but did not.</msg>
+<status status="FAIL" starttime="20210324 22:58:11.587" endtime="20210324 22:58:12.373"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:58:11.586" endtime="20210324 22:58:12.374"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:58:10.593" endtime="20210324 22:58:12.374"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:58:06.103" endtime="20210324 22:58:12.375">Page should have contained element 'xpath=//div[@class='err' and contains(text(), 'Access Denied')]' but did not.</status>
+</test>
+<test id="s1-t20" name="Password supports UNICODE">
+<kw name="Open test browser" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210324 22:58:12.378" level="INFO">Opening browser 'chrome' to base url 'http://crystaltest.com/bg/changepwd.php'.</msg>
+<status status="PASS" starttime="20210324 22:58:12.377" endtime="20210324 22:58:16.886"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:12.376" endtime="20210324 22:58:16.887"/>
+</kw>
+<kw name="Submit Changed Password">
+<arg>${VALID_OLD_PASSWORD}</arg>
+<arg>उനЬa#ɊЦ1</arg>
+<arg>उനЬa#ɊЦ1</arg>
+<arg>${SUSSESS_CHANGED_MESSAGE}</arg>
+<msg timestamp="20210324 22:58:16.892" level="FAIL">Variable '${SUSSESS_CHANGED_MESSAGE}' not found.</msg>
+<status status="FAIL" starttime="20210324 22:58:16.887" endtime="20210324 22:58:16.892"/>
+</kw>
+<status status="FAIL" starttime="20210324 22:58:12.376" endtime="20210324 22:58:16.893">Variable '${SUSSESS_CHANGED_MESSAGE}' not found.</status>
+</test>
+<kw name="Close all test browsers" type="TEARDOWN">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210324 22:58:16.902" endtime="20210324 22:58:19.143"/>
+</kw>
+<status status="PASS" starttime="20210324 22:58:16.900" endtime="20210324 22:58:19.144"/>
+</kw>
+<doc>Verification of Change Password Functionality</doc>
+<status status="FAIL" starttime="20210324 22:56:50.454" endtime="20210324 22:58:19.144"/>
+</suite>
+<statistics>
+<total>
+<stat pass="14" fail="6" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="14" fail="6" skip="0" id="s1" name="Tests1">Tests1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
